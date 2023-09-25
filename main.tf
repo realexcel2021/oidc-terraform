@@ -22,7 +22,6 @@ resource "aws_instance" "nginx" {
   ami             = "ami-053b0d53c279acc90"
   instance_type   = "t2.micro"
   security_groups = [aws_security_group.nginx_sg.name]
-  key_name        = data.aws_key_pair.web-key-pair.key_name
   user_data       = file("./script.sh")
 
   tags = {
